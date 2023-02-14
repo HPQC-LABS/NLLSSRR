@@ -1,0 +1,9 @@
+gfortran       -O2               -c -o nllssrr.o nllssrr.f
+gfortran       -O2              nllssrr.o -o nllssrr.x
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+nllssrr.o: In function `nllssrr_':
+nllssrr.f:(.text+0x946): undefined reference to `dyidpj_'
+collect2: error: ld returned 1 exit status
+Makefile:27: recipe for target 'fit' failed
+make: *** [fit] Error 1

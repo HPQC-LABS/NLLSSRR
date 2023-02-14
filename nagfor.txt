@@ -1,0 +1,16 @@
+nagfor -O2               -c -o nllssrr.o nllssrr.f
+NAG Fortran Compiler Release 7.1(Hanzomon) Build 7114
+Evaluation trial version of NAG Fortran Compiler Release 7.1(Hanzomon) Build 7114
+Non-standard(Obsolete): nllssrr.f, line 80: Byte count on numeric data type
+                        detected at *@8
+Error: nllssrr.f, line 283: Missing comma in format specification
+       detected at ' Constrain  PV('@I3
+Questionable: nllssrr.f, line 455: Variable ISCAL set but never referenced
+Questionable: nllssrr.f, line 455: Variable PSS set but never referenced
+Non-standard(Obsolete): nllssrr.f, line 486: Byte count on numeric data type
+                        detected at *@8
+Non-standard(Obsolete): nllssrr.f, line 525: Byte count on numeric data type
+                        detected at *@8
+[NAG Fortran Compiler pass 1 error termination, 1 error, 5 warnings]
+<builtin>: recipe for target 'nllssrr.o' failed
+make: *** [nllssrr.o] Error 2
