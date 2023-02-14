@@ -3,14 +3,21 @@ NAG Fortran Compiler Release 7.1(Hanzomon) Build 7114
 Evaluation trial version of NAG Fortran Compiler Release 7.1(Hanzomon) Build 7114
 Non-standard(Obsolete): nllssrr.f, line 80: Byte count on numeric data type
                         detected at *@8
-Error: nllssrr.f, line 283: Missing comma in format specification
-       detected at ' Constrain  PV('@I3
 Questionable: nllssrr.f, line 455: Variable ISCAL set but never referenced
 Questionable: nllssrr.f, line 455: Variable PSS set but never referenced
 Non-standard(Obsolete): nllssrr.f, line 486: Byte count on numeric data type
                         detected at *@8
 Non-standard(Obsolete): nllssrr.f, line 525: Byte count on numeric data type
                         detected at *@8
-[NAG Fortran Compiler pass 1 error termination, 1 error, 5 warnings]
-<builtin>: recipe for target 'nllssrr.o' failed
-make: *** [nllssrr.o] Error 2
+Obsolescent: nllssrr.f, line 2: Fixed source form
+[NAG Fortran Compiler normal termination, 6 warnings]
+nagfor -O2              nllssrr.o -o nllssrr.x
+NAG Fortran Compiler Release 7.1(Hanzomon) Build 7114
+Evaluation trial version of NAG Fortran Compiler Release 7.1(Hanzomon) Build 7114
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+nllssrr.o: In function `nllssrr_':
+nllssrr.006691.c:(.text+0x10d9): undefined reference to `dyidpj_'
+collect2: error: ld returned 1 exit status
+Makefile:27: recipe for target 'fit' failed
+make: *** [fit] Error 1

@@ -113,7 +113,7 @@ c [Approximate expression for (NDATA-NPARM).GT.10 accurate to ca. 0.002]
       TFACT= 0.D0
       IF(NDATA.GT.NPARM) THEN
           IDF= NDATA-NPARM
-          IF(IDF.GT.10) TFACT= 1.960D0*DEXP(1.265D0/DFLOAT(IDF))
+          IF(IDF.GT.10) TFACT= 1.960D0*DEXP(1.265D0/DBLE(IDF))
           IF(IDF.LE.10) TFACT= F95(IDF)
         ELSE
           TFACT= 0.D0
@@ -254,7 +254,7 @@ c  Parameter Sensitivities PS
 c** Use DSE to get final (95% confid. limit) parameter uncertainties PU
 c** Calculate 'parameter sensitivities', changes in PV(j) which would
 c  change predictions of input data by an RMS average of  DSE*0.1/NPARM
-          YC= DSE*0.1d0/DFLOAT(NPARM)
+          YC= DSE*0.1d0/DBLE(NPARM)
           S= DSE*TFACT
           DO  J = 1,NPARM
               PU(J)= S* PU(J)
@@ -280,7 +280,7 @@ c** If this parameter constrained to equal some earlier parameter ....
                      PV(J)= PV(JFXP(J))
                      WRITE(6,668) J,JFXP(J),PV(J),ITER
                      ENDIF
-  668 FORMAT(' Constrain  PV('i3,') = PV(',I3,') =',1pd15.8,
+  668 FORMAT(' Constrain  PV(',i3,') = PV(',I3,') =',1pd15.8,
      1 '  on cycle',i3)
 c** If parameter held fixed (by input or rounding process), shift values
 c   of change, sensitivity & uncertainty to correct label.
@@ -406,7 +406,7 @@ c** If no parameters varied or sequential rounding completed - simply
 c   calculate DSE from RMS residuals and return.
    60 DSE= 0.d0
       IF(NDATA.GT.NPFIT) THEN
-          DSE= RMSR*DSQRT(DFLOAT(NDATA)/DFLOAT(NDATA-NPFIT))
+          DSE= RMSR*DSQRT(DBLE(NDATA)/DBLE(NDATA-NPFIT))
         ELSE
           DSE= 0.d0
         ENDIF
